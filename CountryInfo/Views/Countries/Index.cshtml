@@ -1,0 +1,137 @@
+﻿@using CountriesProcessUnit.ViewModels
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of countries</h2>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Country name</th>
+            <th>Capital name</th>
+            <th>Population of country</th>
+            <th>Population of capital</th>
+            <th>Flag</th>
+            <th>Actions <span id="addNewCountry" class="glyphicon glyphicon-plus pull-right addButton" title="Add new country" aria-hidden="true"></span></th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Country details</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add new country</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formAdd">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="countryNameAdd">Country name</label>
+                                <input type="text" class="form-control" id="countryNameAdd" placeholder="Country name">
+                            </div>
+                            <div class="form-group">
+                                <label for="countryDescriptionAdd">Country description</label>
+                                <textarea class="form-control" id="countryDescriptionAdd" rows="10"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="countryPopulationAdd">Country population</label>
+                                <input type="number" class="form-control" id="countryPopulationAdd" placeholder="Country population">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="capitalNameAdd">Capital name</label>
+                                <input type="text" class="form-control" id="capitalNameAdd" placeholder="Capital name">
+                            </div>
+                            <div class="form-group">
+                                <label for="capitalDescriptionAdd">Capital description</label>
+                                <textarea class="form-control" id="capitalDescriptionAdd" rows="10"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="capitalPopulationAdd">Capital population</label>
+                                <input type="number" class="form-control" id="capitalPopulationAdd" placeholder="Capital population">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="flagAdd">Flag</label>
+                                <input type="file" class="form-control" id="flagAdd" placeholder="Flag">
+                            </div>
+                            <img id="imgPreviewAdd" class="image" src="#" alt="Preview" hidden/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="addCountry" type="button" class="btn btn-success">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edit country</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="editCountry" type="button" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Delete country</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button id="deleteCountry" type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="~/Scripts/Views/CountriesIndex.js"></script>
+}
